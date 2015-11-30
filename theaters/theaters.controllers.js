@@ -16,13 +16,14 @@
         TheatersService.addMovie(movie);
       };
     })
-    .controller('MyTheatersController', function($scope, $routeParams, MyTheatersService){
+    .controller('MyTheatersController', function($scope, $routeParams, $route, MyTheatersService){
       MyTheatersService.getMyPicks().success(function(picks){
         $scope.myPicks = picks;
       });
 
       $scope.deleteMovie = function(movieId){
         MyTheatersService.deleteMovie(movieId);
+        setTimeout(function(){$route.reload();}, 100);
       };
     });
 

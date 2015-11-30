@@ -16,13 +16,14 @@
       };
 
     })
-    .controller('MyDVDController', function($scope, $routeParams, MyDVDService){
+    .controller('MyDVDController', function($scope, $routeParams, $route, MyDVDService){
       MyDVDService.getMyPicks().success(function(picks){
         $scope.myPicks = picks;
       });
 
       $scope.deleteMovie = function(movieId){
         MyDVDService.deleteMovie(movieId);
+        setTimeout(function(){$route.reload();}, 100);
       };
 
     });
