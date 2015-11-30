@@ -21,3 +21,19 @@ header {
 
 .theater {
   width: 100%; }
+
+.round {
+  border-radius: 100%; }
+
+.entry {
+  width: 50%;
+  margin: 10px auto;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px; }
+  .entry p {
+    text-align: left; }
+
+body {
+  text-align: center; }
