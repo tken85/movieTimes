@@ -25,7 +25,7 @@
         };
 
         var addMovie = function(movie){
-          $http.post(myUrl, movie);
+          return $http.post(myUrl, movie);
         };
 
         return {
@@ -43,7 +43,7 @@
       };
 
       var deleteMovie = function(movieId){
-        $http.delete(myUrl + '/' + movieId);
+        return $http.delete(myUrl + '/' + movieId);
       };
 
       return {
