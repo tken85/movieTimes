@@ -26,7 +26,22 @@
         };
 
         var addMovie = function(movie){
-          return $http.post(myUrl, movie);
+          var picks = [];
+          var myMovies = function(){
+            return $http.get(myUrl);
+          };
+
+          myMovies().success(function(data){
+            picks = data;
+            if(_.where(picks, {title: movie.title}).length===0){
+            return $http.post(myUrl, movie);
+            }
+            else{
+              alert("movie already in your picks");
+            }
+          });
+
+
         };
 
         return {
