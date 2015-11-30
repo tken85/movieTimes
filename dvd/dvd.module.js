@@ -11,15 +11,15 @@
       $routeProvider
         .when('/dvd/critPicks',{
           templateUrl: 'dvd/views/critPicks.html',
-          controller: 'DVDController',
+          controller: 'DVDController as dvdCtrl',
         })
         .when('/dvd/search',{
           templateUrl: 'dvd/views/search.html',
-          controller: 'DVDController',
+          controller: 'DVDController as dvdCtrl',
         })
         .when('/dvd/myPicks',{
           templateUrl: 'dvd/views/myPicks.html',
-          controller: 'MyDVDController'
+          controller: 'MyDVDController as myDvdCtrl'
         })
         .otherwise({redirectTo: '/404'});
     });

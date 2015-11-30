@@ -4,26 +4,27 @@
   angular
     .module('theaters')
     .controller('TheatersController', function($scope, $routeParams, TheatersService){
-
+      var vm = this;
       TheatersService.getPicks().then(function(picks){
-        $scope.critPicks = picks;
+        vm.critPicks = picks;
         console.log("picks", picks);
       });
       TheatersService.getMovie().success(function(movie){
       });
 
-      $scope.addMovie = function(movie){
+      vm.addMovie = function(movie){
         TheatersService.addMovie(movie);
       };
     })
     .controller('MyTheatersController', function($scope, $routeParams, $route, MyTheatersService){
+      var vm = this;
       var loadMyPicks = function(){
         MyTheatersService.getMyPicks().success(function(picks){
-          $scope.myPicks = picks;
+          vm.myPicks = picks;
         });
       };
       loadMyPicks();
-      $scope.deleteMovie = function(movieId){
+      vm.deleteMovie = function(movieId){
         MyTheatersService.deleteMovie(movieId).success(function(){
           loadMyPicks();
         });

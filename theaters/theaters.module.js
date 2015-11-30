@@ -11,15 +11,15 @@
       $routeProvider
         .when('/theaters/critPicks',{
           templateUrl: 'theaters/views/critPicks.html',
-          controller: 'TheatersController',
+          controller: 'TheatersController as theaterCtrl',
         })
         .when('/theaters/search',{
           templateUrl: 'theaters/views/search.html',
-          controller: 'TheatersController',
+          controller: 'TheatersController as theaterCtrl',
         })
         .when('/theaters/myPicks',{
           templateUrl: 'theaters/views/myPicks.html',
-          controller: 'MyTheatersController'
+          controller: 'MyTheatersController as myTheaterCtrl'
         });
     });
 

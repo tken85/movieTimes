@@ -1,12 +1,12 @@
 <h1>My Picks Currently on DVD</h1>
 
-<div ng-repeat="pick in myPicks">
+<div ng-repeat="pick in myDvdCtrl.myPicks">
   <div class="entry">
   <h2>{{pick.title}}</h2>
   <img ng-src="{{pick.image}}" class="round">
   <p>{{pick.summary}}</p>
   <a href="{{pick.review}}" class="btn btn-primary">Go to Review</a>
   <a href="{{pick.showtimes}}" class="btn btn-primary">Showtimes</a>
-  <button class="btn btn-danger" ng-click="deleteMovie(pick._id)">Delete</button>
+  <button class="btn btn-danger" ng-click="myDvdCtrl.deleteMovie(pick._id)">Delete</button>
   </div>
 </div>
