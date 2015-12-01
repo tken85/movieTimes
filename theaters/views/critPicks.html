@@ -1,12 +1,5 @@
 <h1>Critics' Picks Currently in Theaters</h1>
+<h1>Critics' Picks on DVD</h1>
 
-<div ng-repeat="pick in theaterCtrl.critPicks">
-  <div class="entry">
-  <h2>{{pick.title}}</h2>
-  <img ng-src="{{pick.image}}" class="round">
-  <p>{{pick.summary}}</p>
-  <a href="{{pick.review}}" class="btn btn-primary">Go to Review</a>
-  <a href="{{pick.showtimes}}" class="btn btn-primary">Showtimes</a>
-  <button class="btn btn-primary" ng-click="theaterCtrl.addMovie(pick)">Add to My Movies</button>
-  </div>
-</div>
+<crit-pick ng-repeat="pick in theaterCtrl.critPicks" pick="pick" action="theaterCtrl.addMovie(pick)">
+</crit-pick>
