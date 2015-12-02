@@ -11,9 +11,9 @@
         return _.map(collection, function(obj){return {title: obj.display_title, image: obj.multimedia.resource.src, summary: obj.summary_short, rev_link: obj.link.url, showtimes: obj.related_urls[1].url};
         });
       };
-        var picksUrl= 'http://api.nytimes.com/svc/movies/v2/reviews/picks.json?order=by-date&api-key=296617c878332bb4eff9b9cdab89d511:19:73616991';
+        var picksUrl= 'https://api.nytimes.com/svc/movies/v2/reviews/picks.json?order=by-date&api-key=296617c878332bb4eff9b9cdab89d511:19:73616991';
 
-        var movieUrl = "http://api.nytimes.com/svc/movies/v2/reviews/search.json?query='Rocky+Balboa'&order=by-title&api-key=296617c878332bb4eff9b9cdab89d511:19:73616991";
+        var movieUrl = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?query='Rocky+Balboa'&order=by-title&api-key=296617c878332bb4eff9b9cdab89d511:19:73616991";
 
         var getPicks = function(){
           return $http.get(picksUrl).then(function(data){
