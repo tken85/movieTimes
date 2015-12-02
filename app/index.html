@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Api</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body ng-app="apimods">
+  <header ng-Mouseover="over=true" ng-init="over=false" ng-Mouseleave="over=false">
+    <div class="row"><h1>Movie Times <span id="nyt">Powered by <i> The New York Times</i>&reg;</span></h1></div>
+    <div class="row">
+      <div class="col-md-6 noRight"><a href="" class="btn btn-default headbtn">In Theaters</a></div>
+      <div class="col-md-6 noLeft"><a href="" class="btn btn-default headbtn">On DVD</a></div>
+    </div>
+    <div class="row" ng-show="over">
+    <div class="col-md-2 noRight"><a href="#/theaters/critPicks" class="btn btn-default headbtn">Critic Theater Picks</a></div>
+    <div class="col-md-2 noLeft noRight"><a href="#/theaters/myPicks" class="btn btn-default headbtn">My Theater Picks</a></div>
+    <div class="col-md-2 noLeft noRight"><a href="#/theaters/search" class="btn btn-default headbtn">Search in Theaters</a></div>
+    <div class="col-md-2 noLeft noRight"><a href="#/dvd/critPicks" class="btn btn-default headbtn">Critic DVD Picks</a></div>
+    <div class="col-md-2 noLeft noRight"><a href="#/dvd/myPicks" class="btn btn-default headbtn">My DVD Picks</a></div>
+    <div class="col-md-2 noLeft"><a href="#/dvd/search" class="btn btn-default headbtn">Search DVD</a></div>
+    </div>
+  </header>
+    <div class="container">
+      <ng-view></ng-view>
+    </div>
+
+
+    <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+    <script src="bower_components/underscore/underscore.js" charset="utf-8"></script>
+    <script src="bower_components/angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js" charset="utf-8"></script>
+
+  <!-- common module -->
+    <script src="common/app.module.js" charset="utf-8"></script>
+    <script src="common/app.controllers.js" charset="utf-8"></script>
+    <script src="common/movieInfo.directive.js" charset="utf-8"></script>
+    <script src="common/critPick.directive.js" charset="utf-8"></script>
+    <script src="common/app.services.js" charset="utf-8"></script>
+
+  <!-- theaters module -->
+  <script src="theaters/theaters.module.js" charset="utf-8"></script>
+  <script src="theaters/theaters.controllers.js" charset="utf-8"></script>
+  <script src="theaters/theaters.services.js" charset="utf-8"></script>
+
+  <!-- dvd module -->
+  <script src="dvd/dvd.module.js" charset="utf-8"></script>
+  <script src="dvd/dvd.controllers.js" charset="utf-8"></script>
+  <script src="dvd/dvd.services.js" charset="utf-8"></script>
+
+
+  </body>
+</html>
